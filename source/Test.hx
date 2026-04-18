@@ -1,5 +1,6 @@
 package;
 
+import flixel.FlxG;
 import flixel.text.FlxText;
 import flixel.FlxState;
 #if (android || ios)
@@ -16,11 +17,13 @@ class Test extends FlxState
 		super.create();
 
 		#if (android || ios)
-		VideoView.playVideo(Paths.video(name)); // the video can be in any format (e.g., .webm, .mkv, .etc)
+		VideoView.playVideo(Paths.video('test')); // the video can be in any format (e.g., .webm, .mkv, .etc)
 		VideoView.onCompletion = function()
 		{
 			FlxG.switchState(PlayState.new);
 		}
+		#else
+		FlxG.switchState(PlayState.new);
 		#end
 	}
 
