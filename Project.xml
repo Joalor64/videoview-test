@@ -56,6 +56,7 @@
 
 	<!-- In case you want Android support -->
 	<haxelib name="extension-androidtools" if="android" />
+	<haxelib name="extension-videoview" if="android || ios" />
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 
@@ -84,6 +85,8 @@
 
 	<!-- Pretty error reporting -->
 	<haxedef name="message.reporting" value="pretty" />
+
+	<ios deployment="13.6" />
 
 	<!-- _________________________________ Custom _______________________________ -->
 
