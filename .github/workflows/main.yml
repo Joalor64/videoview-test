@@ -196,12 +196,6 @@ jobs:
       
       - name: Installing Libraries
         run: haxe --interp -cp ./actions/libs-installer -D analyzer-optimize -main Main
-
-      - name: Link Local Extension
-        run: haxelib dev extension-videoview .
-
-      - name: Rebuild extension-videoview
-        run: haxelib run lime rebuild extension-videoview ios
       
       - name: Create Version Tag
         run: echo "${{ github.run_id }}" > VERSION
