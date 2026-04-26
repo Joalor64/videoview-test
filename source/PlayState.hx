@@ -8,7 +8,7 @@ import flixel.FlxState;
  */
 class PlayState extends FlxState
 {
-	public static var text:String = 'Hello World';
+	public var text:String = 'Hello World';
 
 	public function new(?text:String = 'Hello World')
 	{
