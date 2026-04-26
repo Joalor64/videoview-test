@@ -20,7 +20,7 @@ class Test extends FlxState
 		VideoView.playVideo(Paths.video('test')); // the video can be in any format (e.g., .webm, .mkv, .etc)
 		VideoView.onCompletion = function()
 		{
-			FlxG.switchState(PlayState.new);
+			FlxG.switchState(new PlayState());
 		}
 		VideoView.onError = function(msg:String)
 		{
@@ -28,7 +28,7 @@ class Test extends FlxState
 			FlxG.switchState(new PlayState(msg));
 		};
 		#else
-		FlxG.switchState(PlayState.new);
+		FlxG.switchState(new PlayState());
 		#end
 	}
 
