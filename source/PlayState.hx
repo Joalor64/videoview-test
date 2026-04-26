@@ -8,11 +8,18 @@ import flixel.FlxState;
  */
 class PlayState extends FlxState
 {
+	public static var text:String = 'Hello World';
+
+	public function new(?text:String = 'Hello World')
+	{
+		super();
+		this.text = text;
+	}
 	override public function create():Void
 	{
 		super.create();
 
-		var text:FlxText = new FlxText(0, 0, 0, "Hello World", 64);
+		var text:FlxText = new FlxText(0, 0, 0, text, 64);
 		text.screenCenter();
 		add(text);
 	}

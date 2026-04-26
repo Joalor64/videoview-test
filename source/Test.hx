@@ -22,6 +22,11 @@ class Test extends FlxState
 		{
 			FlxG.switchState(PlayState.new);
 		}
+		VideoView.onError = function(msg:String)
+		{
+			trace("Video error: " + msg);
+			FlxG.switchState(new PlayState(msg));
+		};
 		#else
 		FlxG.switchState(PlayState.new);
 		#end
