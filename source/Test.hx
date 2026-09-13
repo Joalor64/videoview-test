@@ -25,7 +25,7 @@ class Test extends FlxState
 		{
 			FlxG.switchState(new PlayState());
 		};
-		#else #if ios
+		#elseif ios
 		IOSVideo.play(Paths.video('test'));
 		IOSVideo.onComplete = function()
 		{
