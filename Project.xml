@@ -56,7 +56,8 @@
 
 	<!-- In case you want Android support -->
 	<haxelib name="extension-androidtools" if="android" />
-	<haxelib name="extension-videoview" if="android || ios" />
+	<haxelib name="extension-videoview" if="android" />
+	<haxelib name="ios-videoplay" if="ios" />
 
 	<!-- ______________________________ Haxedefines _____________________________ -->
 

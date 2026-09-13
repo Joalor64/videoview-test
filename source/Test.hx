@@ -3,8 +3,11 @@ package;
 import flixel.FlxG;
 import flixel.text.FlxText;
 import flixel.FlxState;
-#if (android || ios)
+#if android
 import extension.videoview.VideoView;
+#end
+#if ios
+import iosvideo.IOSVideo;
 #end
 
 /**
@@ -16,16 +19,17 @@ class Test extends FlxState
 	{
 		super.create();
 
-		#if (android || ios)
+		#if android
 		VideoView.playVideo(Paths.video('test')); // the video can be in any format (e.g., .webm, .mkv, .etc)
 		VideoView.onCompletion = function()
 		{
 			FlxG.switchState(new PlayState());
-		}
-		VideoView.onError = function(msg:String)
+		};
+		#else #if ios
+		IOSVideo.play(Paths.video('test'));
+		IOSVideo.onComplete = function()
 		{
-			trace("Video error: " + msg);
-			FlxG.switchState(new PlayState(msg));
+			FlxG.switchState(new PlayState());
 		};
 		#else
 		FlxG.switchState(new PlayState());
